@@ -40,12 +40,28 @@ for (j in 1:20){
 
 area20_df <- as.data.frame(area20, col.names = c(1:20))
 row.names(area20_df) <- unlist(CSA_names_heat)
-#area20_df <- area20_df[-c(24,25,26), ]
 
 area20_df <- area20_df[,c(5,10,15,20)]
-area20_df <- area20_df/max(area20_df)
 
-area20_df$R0 <- R_0v/max(R_0v)
+X5_scale <- scale(area20_df$X5)
+X5_s <- unlist(X5_scale[,1])
+
+X10_scale <- scale(area20_df$X10)
+X10_s <- unlist(X10_scale[,1])
+
+X15_scale <- scale(area20_df$X15)
+X15_s <- unlist(X15_scale[,1])
+
+X20_scale <- scale(area20_df$X20)
+X20_s <- unlist(X20_scale[,1])
+
+R_scale <- (scale(R_0v))
+R_s <- unlist(R_scale[,1])
+
+R_s <- (R_0v - mean(R_0v))/sd(R_0v)
+
+area20_df <- data.frame(X5 = X5_s, X10 = X10_s, X15 = X15_s, X20 = X20_s, R_0 = R_s)
+row.names(area20_df) <- unlist(CSA_names_heat)
 
 # dataset:
 data <- as.matrix(area20_df)

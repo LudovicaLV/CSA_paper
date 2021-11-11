@@ -14,9 +14,9 @@ for (i in 1:29){
 
 area <- area20_df$X20
 #area <- area20_df$area
-R0 <- area20_df
-  
-plot(area[s_v], R0[s_v], col = "blue", xlim = c(0,1), ylim = c(0,1), pch = 19, xlab = "Area 20-day range", ylab = "R_0")
+R0 <- R_0v
+
+plot(area[s_v], R0[s_v], col = "blue", xlim = c(3,17), ylim = c(1,10), pch = 19, xlab = "Area 20-day range", ylab = "R_0")
 points(area[f_v], R0[f_v], col = "red", pch = 19)
 
 #3 clusters
@@ -40,8 +40,7 @@ for (i in 1:29){
 
 area <- area20_df$X20
 R0 <- area20_df$R0
-  
-plot(area[s_v], R0[s_v], col = "blue", xlim = c(0,1), ylim = c(0,1), pch = 19, xlab = "Area 20-day range", ylab = "R_0")
+
+plot(area[s_v], R0[s_v], col = "blue", xlim = c(3,17), ylim = c(1,10), pch = 19, xlab = "Area 20-day range", ylab = "R_0")
 points(area[f_v], R0[f_v], col = "red", pch = 19)
 points(area[m_v], R0[m_v], col = "purple", pch = 19)
-
